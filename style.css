@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Condensed:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+  
+.contenedor-pelicula {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.pelicula {
+    width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+  
+.pelicula img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+  
+.descripcion {
+    padding: 10px;
+}
+  
+.descripcion h2 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+  
+.descripcion p {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+  
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    .contenedor-pelicula {
+      justify-content: space-around;
+    }
+    .pelicula {
+      width: 45%;
+    }
+}
+  
+@media only screen and (max-width: 480px) {
+    .pelicula {
+      width: 90%;
+    }
+    .descripcion {
+      display: none;
+    }
+}
+  
