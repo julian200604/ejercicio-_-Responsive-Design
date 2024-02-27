@@ -20,7 +20,7 @@ h1 {
   
 .contenedor-pelicula {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*se aplica al contenedor para asegurarse de que las películas se envuelvan en múltiples líneas si el espacio horizontal disponible no es suficiente para mostrar todas las películas en una sola fila. */
     justify-content: center;
 }
   
@@ -28,8 +28,10 @@ h1 {
     width: 250px;
     margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*se agrega un efecto sombra en los bordes del cuadro*/
+    overflow: hidden; /*esta propiedad sirve para asegurarse de que cualquier contenido que sobresalga 
+                        del contenedor (en este caso, la descripción de la película) no se muestre fuera 
+                        de los límites del contenedor y se recorte de manera limpia y ordenada*/
 }
   
 .pelicula img {
@@ -54,21 +56,36 @@ h1 {
 }
   
 /* Media Queries */
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .contenedor-pelicula {
       justify-content: space-around;
     }
     .pelicula {
       width: 45%;
     }
-}
+} /*
+    -container: El valor de justify-content se cambia a space-around, lo que distribuye uniformemente el espacio 
+    entre los elementos, creando un margen igual alrededor de las películas.
+    -movie: El ancho de cada película se establece en el 45% del contenedor, lo que permite que se muestren dos películas por fila.
+*/
   
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
     .pelicula {
       width: 90%;
     }
     .descripcion {
       display: none;
     }
-}
+} /*
+    -movie: El ancho de cada película se establece en el 90% del contenedor, lo que permite que se muestre una 
+    sola película por fila para una mejor legibilidad en dispositivos móviles.
+    -description: La descripción de la película se oculta estableciendo display: none;, lo que significa que 
+    no se mostrará en dispositivos móviles para mantener un diseño más limpio y enfocado en la imagen de la película.
+*/
+
+/*
+  @media en CSS se utiliza para aplicar estilos específicos a una página web según ciertas condiciones, 
+  como el tipo de dispositivo, el tamaño de la pantalla, la orientación, etc. Es una forma de hacer que
+   el diseño de tu página web sea más flexible y se adapte a diferentes contextos de visualización.
+*/
   
